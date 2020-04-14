@@ -73,7 +73,18 @@ print(len(text12.splitlines()))     # Number of Lines
 text13 = text12.splitlines()
 print(text13[0])
 f.close()
-# f.write can write backj in file if file is opend in write mode
+# f.write can write back in file if file is opend in write mode
+
+# ------------------------------Regular expression--------------------------
+tweet_unsg = '"Ethics are built rilght into the ideals nd objectives of the United Natioins" \
+    #UNSG #Women 2 NY Society for Ethical Culture bit.ly/2guVelr @UN @UN_Women'
+
+tweet_token = tweet_unsg.split(' ')
+print (tweet_token)
+
+# All Hashtags
+print([word for word in tweet_unsg.split() if word.startswith('#')])
+
 
 
 
