@@ -85,6 +85,45 @@ print (tweet_token)
 # All Hashtags
 print([word for word in tweet_unsg.split() if word.startswith('#')])
 
+# Callout
+print([word for word in tweet_unsg.split() if word.startswith('@')])
+# but this may return wrong some time
+# Let's try Regex
+
+# Let's learn regex
+# . : wildcard, matches a single character
+# ^ : start of string
+# $ : end of string
+# [] : Match one of the character withinn it
+# [a-z] : matches range a-z
+# [^abc] : inverse. match any charaacter which is not a, b, c
+# a|b : match either a or b
+# () : Scoping for 
+# \ : Escape Character
+# \b : Mataches word boundry
+# \d : match any digit = [0-9]
+# \D: Any non-digit = [^0-9]
+# \s: Any whitespace = [ \t\n\r\f\v]
+# \S : invese of \s = [^ \t\n\r\f\v]
+# \w = Alphanumeric = [a-zA-Z0-9]
+# \W : Inverse of \w = [^a-zA-Z0-9_]
+
+#Repitions
+# * : Zero or more time
+# + : One or more time but at least once
+# ? : matches zero or 1 time
+# {n} : exactly n times
+# {n,} : atleast n times
+# {,n} : at most n times
+# (m,n): at least m times and at most n times
+
+import re
+
+# let's get callouts
+print([word for word in tweet_unsg.split() if re.search('@\w+',word)])
+# or
+print([word for word in tweet_unsg.split() if re.search('@[_a-zA-Z0-9]+',word)])
+
 
 
 
