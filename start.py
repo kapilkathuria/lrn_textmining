@@ -9,6 +9,16 @@
 
 # Premitive constructs - sentences --> Words--> Chartacters
 
+# -------------------Section Resources------------------------------------
+# Regular Expressions
+# Regular expressions documentation in Python 3
+# Tips and tricks of the trade for cleaning text in Python
+# https://stanford.edu/~rjweiss/public_html/IRiSS2013/text2/notebooks/cleaningtext.html
+# https://www.analyticsvidhya.com/blog/2014/11/text-data-cleaning-steps-python/
+# http://ieva.rocks/2016/08/07/cleaning-text-for-nlp/
+# https://chrisalbon.com/python/cleaning_text.html
+# ------------------------------------------------------------------------------------------
+
 text1 = "Kapil is learning text mining Mining IS"
 print(len(text1))
 
@@ -120,12 +130,51 @@ print([word for word in tweet_unsg.split() if word.startswith('@')])
 import re
 
 # let's get callouts
-print([word for word in tweet_unsg.split() if re.search('@\w+',word)])
+print([word for word in tweet_unsg.split() if re.search(r'@\w+',word)])
 # or
 print([word for word in tweet_unsg.split() if re.search('@[_a-zA-Z0-9]+',word)])
 
+# Find specific character
+print(re.findall(r'[aeiou]', capital))
+
+print(re.findall(r'[^aeiou]', capital))
+
+# Regular Variation for Dates
+# To Match many variation of date
+
+datestr = "21 Jan 2009, 21/01/2009, 21/01/09, Jan 21 2009, 2009-01-09, 21 January 2009,  \
+    January 21, 2009"
+
+print(re.findall(r'(?:\d{2} )?(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]* (?:\d{1,2}, )?\d{4}' \
+, datestr))
+print(re.findall(r'(?:\d{2} )(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*' , datestr))
 
 
+# Regex with Pandas
+# See https://rvtpxxltpgkzkhxqvzmbpo.coursera-apps.org/notebooks/Regex%20with%20Pandas%20and%20Named%20Groups.ipynb
 
 
+# Multiple Language - internationlization
+
+# ASCII - encoding for English
+# 128 codes -- 7Bits
+# It doesn't capture Diacitics 
+# Many cities and organization use these Diacritics
+# it doesn't cover other languages, emoji, music etc.
+# 36% people use Latin, 2nd is CHinese
+
+# Other encoding schemes
+# IBM EBCDIC, Latin -1, EUC (Extended Unix Code)
+# Unicode and UTF-8
+# UTF is more than 60% now
+
+# Unicode - 128K characters
+
+# UTF -8
+# Unicode Transformational formats 8 bits
+# 1-4 bytes
+# Backward code with ASCII - 1 byte code codes same
+# default in python 3
+# résumé - len in pyhton 3 shown in 6 while in python 2 is 8
+# In python 2 you can say it is unicode by using (u'résumé')
 
