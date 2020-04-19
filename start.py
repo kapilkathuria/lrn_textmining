@@ -10,7 +10,7 @@
 # Premitive constructs - sentences --> Words--> Chartacters
 
 # -------------------Section Resources------------------------------------
-# Regular Expressions
+# Regular Exprreessions
 # Regular expressions documentation in Python 3
 # Tips and tricks of the trade for cleaning text in Python
 # https://stanford.edu/~rjweiss/public_html/IRiSS2013/text2/notebooks/cleaningtext.html
