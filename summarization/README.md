@@ -1,0 +1,1 @@
+course: https://www.udemy.com/course/text-summarization-natural-language-processing-python
